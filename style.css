@@ -241,23 +241,7 @@ h1, h2, h3, .logo {
     box-shadow: 0 20px 30px var(--primary-glow);
 }
 
-.ip-display {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1.2rem 2rem;
-    border-radius: var(--radius-xl);
-    border: 1px dashed rgba(255, 255, 255, 0.2);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    transition: var(--transition);
-}
 
-.ip-display:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: var(--secondary);
-    color: var(--secondary);
-}
 
 /* Window Container Style */
 .window-container {
@@ -545,24 +529,7 @@ section {
 }
 
 /* Toast */
-.toast {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%) translateY(100px);
-    background: var(--primary);
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: var(--radius-full);
-    font-weight: 700;
-    box-shadow: 0 10px 30px var(--primary-glow);
-    transition: var(--transition);
-    z-index: 2000;
-}
 
-.toast.show {
-    transform: translateX(-50%) translateY(0);
-}
 
 /* Responsive */
 @media (max-width: 768px) {
