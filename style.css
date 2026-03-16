@@ -96,18 +96,7 @@ h1, h2, h3, .logo {
     color: var(--primary);
 }
 
-.btn-store {
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    color: white !important;
-    padding: 0.8rem 1.5rem;
-    border-radius: var(--radius-full);
-    box-shadow: 0 10px 20px rgba(236, 72, 153, 0.3);
-}
 
-.btn-store:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 25px rgba(236, 72, 153, 0.4);
-}
 
 .server-status-badge {
     background: rgba(255, 255, 255, 0.1);
