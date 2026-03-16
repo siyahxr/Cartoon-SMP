@@ -61,6 +61,45 @@ window.addEventListener('load', () => {
     setTimeout(updateCount, 1000);
 });
 
+// Initial count animation on load
+window.addEventListener('load', () => {
+    setTimeout(updateCount, 1000);
+});
+
+// Slideshow Functionality for Hero Section
+const heroImages = [
+    { src: 'assets/in-game.png', text: 'In-game footage • Spawn fly-through' },
+    { src: 'assets/gallery-spawn.png', text: 'CN Spawn Hub • Meet the Legends' },
+    { src: 'assets/gallery-market.png', text: 'Toon Market • Player Shops' },
+    { src: 'assets/gallery-cherry.png', text: 'Adventure Forest • Exploration' }
+];
+
+let currentHeroIndex = 0;
+const heroImgElement = document.querySelector('.in-game-img');
+const heroTextElement = document.querySelector('.window-overlay-text');
+
+function cycleHeroImages() {
+    currentHeroIndex = (currentHeroIndex + 1) % heroImages.length;
+    
+    // Add fade out effect
+    heroImgElement.style.opacity = '0';
+    
+    setTimeout(() => {
+        heroImgElement.src = heroImages[currentHeroIndex].src;
+        heroTextElement.textContent = heroImages[currentHeroIndex].text;
+        
+        // Fade back in once src is changed
+        heroImgElement.onload = () => {
+            heroImgElement.style.opacity = '1';
+        };
+    }, 500);
+}
+
+// Start the cycle every 4 seconds
+if (heroImgElement) {
+    setInterval(cycleHeroImages, 4000);
+}
+
 // Mobile menu toggle (simple version)
 document.querySelector('.menu-toggle').addEventListener('click', () => {
     alert('Mobile menu functionality can be added here!');

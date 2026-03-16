@@ -308,6 +308,7 @@ h1, h2, h3, .logo {
     width: 100%;
     border-radius: 12px;
     display: block;
+    transition: opacity 0.5s ease;
 }
 
 .window-overlay-text {
