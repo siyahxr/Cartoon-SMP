@@ -47,11 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Player Count ---
     const countEl = document.getElementById('player-count');
     if (countEl) {
-        let current = 84;
+        let current = Math.floor(Math.random() * (700 - 400 + 1)) + 400;
+        countEl.innerText = current;
         setInterval(() => {
-            current += Math.floor(Math.random() * 5) - 2;
-            if (current < 40) current = 40;
+            current += Math.floor(Math.random() * 11) - 5;
+            if (current < 400) current = 400;
+            if (current > 700) current = 700;
             countEl.innerText = current;
-        }, 3000);
+        }, 4000);
     }
 });
