@@ -1,95 +1,57 @@
-// FAQ Accordion
-document.querySelectorAll('.faq-question').forEach(button => {
-    button.addEventListener('click', () => {
-        const faqItem = button.parentElement;
-        faqItem.classList.toggle('active');
-    });
-});
+document.addEventListener('DOMContentLoaded', () => {
+    // --- Smooth Cursor ---
+    const dot = document.getElementById('custom-cursor');
+    const outline = document.getElementById('custom-cursor-follower');
+    
+    let mx = 0, my = 0;
+    let dx = 0, dy = 0;
+    let ox = 0, oy = 0;
 
-// Smooth scroll for nav links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+    window.addEventListener('mousemove', (e) => {
+        mx = e.clientX; my = e.clientY;
+    });
+
+    const animate = () => {
+        dx += (mx - dx) * 0.2;
+        dy += (my - dy) * 0.2;
+        dot.style.transform = `translate3d(${dx - 5}px, ${dy - 5}px, 0)`;
+
+        ox += (mx - ox) * 0.1;
+        oy += (my - oy) * 0.1;
+        outline.style.transform = `translate3d(${ox - 20}px, ${oy - 20}px, 0)`;
+
+        requestAnimationFrame(animate);
+    };
+    animate();
+
+    // --- Navbar Effect ---
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('navbar');
+        if (window.scrollY > 50) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+    });
+
+    // --- Copy IP ---
+    const copyBtn = document.getElementById('copy-btn');
+    if (copyBtn) {
+        copyBtn.addEventListener('click', () => {
+            const ip = document.getElementById('ip-text').innerText;
+            navigator.clipboard.writeText(ip).then(() => {
+                const inner = copyBtn.innerHTML;
+                copyBtn.innerHTML = '<i class="fas fa-check"></i> <h4>COPIED!</h4>';
+                setTimeout(() => { copyBtn.innerHTML = inner; }, 2000);
+            });
         });
-    });
-});
+    }
 
-// Navbar scroll effect
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.padding = '1rem 0';
-        navbar.style.background = 'rgba(5, 5, 16, 0.95)';
-    } else {
-        navbar.style.padding = '1.5rem 0';
-        navbar.style.background = 'rgba(5, 5, 16, 0.6)';
+    // --- Player Count ---
+    const countEl = document.getElementById('player-count');
+    if (countEl) {
+        let current = 84;
+        setInterval(() => {
+            current += Math.floor(Math.random() * 5) - 2;
+            if (current < 40) current = 40;
+            countEl.innerText = current;
+        }, 3000);
     }
 });
-
-// Simple Player Count Animation
-let currentCount = 0;
-const targetCount = 142; // Example target
-const speed = 20;
-
-function updateCount() {
-    const playerCount = document.getElementById('player-count');
-    if (currentCount < targetCount) {
-        currentCount += Math.ceil((targetCount - currentCount) / 10);
-        playerCount.textContent = currentCount;
-        setTimeout(updateCount, speed);
-    } else {
-        playerCount.textContent = targetCount;
-    }
-}
-
-// Initial count animation on load
-window.addEventListener('load', () => {
-    setTimeout(updateCount, 1000);
-});
-
-// Initial count animation on load
-window.addEventListener('load', () => {
-    setTimeout(updateCount, 1000);
-});
-
-// Slideshow Functionality for Hero Section
-const heroImages = [
-    { src: 'assets/in-game.png', text: 'In-game footage • Spawn fly-through' },
-    { src: 'assets/gallery-spawn.png', text: 'CN Spawn Hub • Meet the Legends' },
-    { src: 'assets/gallery-market.png', text: 'Toon Market • Player Shops' },
-    { src: 'assets/gallery-cherry.png', text: 'Adventure Forest • Exploration' }
-];
-
-let currentHeroIndex = 0;
-const heroImgElement = document.querySelector('.in-game-img');
-const heroTextElement = document.querySelector('.window-overlay-text');
-
-function cycleHeroImages() {
-    currentHeroIndex = (currentHeroIndex + 1) % heroImages.length;
-    
-    // Add fade out effect
-    heroImgElement.style.opacity = '0';
-    
-    setTimeout(() => {
-        heroImgElement.src = heroImages[currentHeroIndex].src;
-        heroTextElement.textContent = heroImages[currentHeroIndex].text;
-        
-        // Fade back in once src is changed
-        heroImgElement.onload = () => {
-            heroImgElement.style.opacity = '1';
-        };
-    }, 500);
-}
-
-// Start the cycle every 4 seconds
-if (heroImgElement) {
-    setInterval(cycleHeroImages, 4000);
-}
-
-// Mobile menu toggle (simple version)
-document.querySelector('.menu-toggle').addEventListener('click', () => {
-    alert('Mobile menu functionality can be added here!');
-});
-// Trigger build: 03/16/2026 21:41:10

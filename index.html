@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cartoon SMP | Cute Minecraft Survival</title>
-    <meta name="description" content="Welcome to Cartoon SMP! The most adorable and fun Minecraft survival server for anime and cartoon lovers. Join our community today!">
+    <title>Cartoon Craft | Premium Minecraft Adventure</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -17,24 +16,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Premium Interactive Cursor -->
+    <div id="custom-cursor"></div>
+    <div id="custom-cursor-follower"></div>
+
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">
-                <span class="logo-icon">🐾</span>
-                Cartoon SMP
-            </a>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">CARTOON<span>CRAFT</span></a>
             <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#hero">HOME</a></li>
+                <li><a href="#features">FEATURES</a></li>
+                <li><a href="#showcase">SHOWCASE</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
-            <div class="server-status-badge">
-                <span class="indicator"></span>
-                <span id="player-count">24</span> Players Online
+            <div class="nav-status" style="font-weight: 800; color: var(--primary); font-size: 0.9rem;">
+                <i class="fas fa-circle" style="font-size: 8px; margin-right: 5px;"></i>
+                <span id="player-count">84</span> PLAYERS
             </div>
-            <button class="menu-toggle"><i class="fas fa-bars"></i></button>
         </div>
     </nav>
 
@@ -43,143 +42,102 @@
         <div class="hero-bg" style="background-image: url('assets/bg-hero.png');"></div>
         <div class="hero-overlay"></div>
         <div class="container hero-content">
-            <div class="hero-text">
-                <span class="badge">SEASON 2 IS LIVE!</span>
-                <h1>The Cutest <span class="accent">Survival</span> Experience</h1>
-                <p>Join a vibrant world filled with adorable creatures, friendly players, and endless cartoon-style adventures. Play with your friends in the most wholesome SMP!</p>
-                <div class="hero-btns">
-                    <a href="https://www.dropbox.com/scl/fi/o06j0102yrdmsq8g684qx/Cartoon-Craft.exe?rlkey=jpwyof7gsq9a60liy7ep2cayt&e=1&st=hhkzsvdp&dl=1" class="btn-primary">
-                        <i class="fas fa-download"></i> Play Now
-                    </a>
-                </div>
+            <span class="hero-badge">A Better SMP Experience</span>
+            <h1 class="hero-title">
+                UNLEASH YOUR<br>
+                <span>IMAGINATION</span>
+            </h1>
+            <p class="hero-p">Welcome to Cartoon Craft. A world meticulously designed for enthusiasts who appreciate high-fidelity visuals and professional survival gameplay.</p>
+            
+            <div class="hero-btns">
+                <a href="https://www.dropbox.com/scl/fi/o06j0102yrdmsq8g684qx/Cartoon-Craft.exe?rlkey=jpwyof7gsq9a60liy7ep2cayt&e=1&st=hhkzsvdp&dl=1" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i> JOIN NOW
+                </a>
+                <a href="#features" class="btn btn-secondary">LEARN MORE</a>
             </div>
-            <div class="hero-image">
-                <div class="window-container">
-                    <div class="window-header">
-                        <div class="window-dots">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
-                        </div>
-                        <div class="window-title">🐾 Cartoon SMP • Season 2</div>
-                    </div>
-                    <div class="window-body">
-                        <img src="assets/in-game.png" alt="In-game Footage" class="in-game-img">
-                        <div class="window-overlay-text">In-game footage • Spawn fly-through</div>
-                    </div>
-                    <div class="window-footer-cards">
-                        <div class="w-card">
-                            <strong>No grief</strong>
-                            <span>Protected claims</span>
-                        </div>
-                        <div class="w-card">
-                            <strong>Sweet economy</strong>
-                            <span>Market & jobs</span>
-                        </div>
-                    </div>
-                </div>
+
+            <div class="server-ip-box" id="copy-btn">
+                <i class="fas fa-server"></i>
+                <h4 id="ip-text">play.cartooncraft.fun</h4>
+                <i class="far fa-copy"></i>
             </div>
+            <p style="margin-top: 20px; opacity: 0.6; font-size: 0.9rem; font-weight: 600;">Click the IP above to copy and join the adventure!</p>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="features">
+    <section id="features" class="section">
         <div class="container">
             <div class="section-header">
-                <h2>Why Choose <span class="accent">Us</span>?</h2>
-                <p>Meet your favorite cartoon legends in our vibrant blocks world!</p>
+                <h2>Why Choose <span style="color: var(--primary);">Us</span>?</h2>
+                <p style="color: var(--text-muted);">We redefine survival with a unique cartoon-infused 3D engine.</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon pink">🌟</div>
-                    <h3>Toon Legends</h3>
-                    <p>Play alongside Finn, Jake, Gumball, and even the Powerpuff Girls in our custom spawn!</p>
+                    <span class="feature-icon">🍬</span>
+                    <h3>Toon Visuals</h3>
+                    <p>Experience Minecraft with hand-painted textures and custom comic-style shaders built exclusively for us.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon cyan">🏰</div>
-                    <h3>Adventure Time</h3>
-                    <p>Explore massive kingdoms and hidden dungeons inspired by Ooo and other cartoon lands.</p>
+                    <span class="feature-icon">🛡️</span>
+                    <h3>Safe Haven</h3>
+                    <p>Advanced community-driven grief protection ensures your creations stay safe forever.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon purple">🎒</div>
-                    <h3>Powerpuff Defense</h3>
-                    <p>Advanced community protection to keep your base safe from those pesky Mojo Jojo's!</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon orange">🎨</div>
-                    <h3>Cartoon Style</h3>
-                    <p>A unique cartoon shader and texture pack experience that brings pure 2D joy to 3D!</p>
+                    <span class="feature-icon">⚡</span>
+                    <h3>Hyper Load</h3>
+                    <p>Our infrastructure delivers silky smooth performance with zero lag, regardless of the player count.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
+    <!-- Scrolling Text -->
+    <div class="status-bar">
+        <div class="status-scroll">
+            CARTOON CRAFT • SEASON 2 IS LIVE • DOWNLOAD THE CUSTOM LAUNCHER • BEST SURVIVAL EXPERIENCE • CARTOON CRAFT • SEASON 2 IS LIVE • DOWNLOAD THE CUSTOM LAUNCHER • BEST SURVIVAL EXPERIENCE • 
+        </div>
+    </div>
+
+    <!-- Showcase Section -->
+    <section id="showcase" class="section">
         <div class="container">
             <div class="section-header">
-                <h2>Server <span class="accent">Gallery</span></h2>
-                <p>Take a sneak peek at the beautiful worlds created by our players.</p>
+                <h2>The <span style="color: var(--primary);">Showcase</span></h2>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="assets/gallery-spawn.png" alt="Spawn Hub">
-                    <div class="gallery-info"><h4>CN Spawn Hub</h4></div>
+                    <img src="assets/gallery-spawn.png" alt="Spawn">
+                    <div class="gallery-overlay"><h4>Spawn Hub</h4></div>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/gallery-market.png" alt="Player Market">
-                    <div class="gallery-info"><h4>Toon Market</h4></div>
+                    <img src="assets/gallery-market.png" alt="Market">
+                    <div class="gallery-overlay"><h4>Global Market</h4></div>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/gallery-cherry.png" alt="Cherry Forest">
-                    <div class="gallery-info"><h4>Adventure Forest</h4></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="faq">
-        <div class="container">
-            <div class="section-header">
-                <h2>Common <span class="accent">Questions</span></h2>
-            </div>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">How do I join the server? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">Simply download the Cartoon Craft launcher using the "Play Now" button and start your adventure! We support Java Edition 1.20+.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Is the server free to play? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">Yes! Cartoon SMP is completely free to play for everyone!</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Can I play on Bedrock Edition? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">Yes, we support cross-play! Bedrock players can join using the same IP with port 19132.</div>
+                    <img src="assets/gallery-cherry.png" alt="Nature">
+                    <div class="gallery-overlay"><h4>Toon Forest</h4></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <span class="logo-icon">🐾</span>
-                    Cartoon SMP
-                </div>
-                <div class="footer-links">
-                    <a href="#"><i class="fab fa-discord"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-                <p>&copy; 2024 Cartoon SMP. Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.</p>
+            <div class="footer-logo">
+                <a href="#" class="logo">CARTOON<span>CRAFT</span></a>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-item"><i class="fab fa-discord"></i></a>
+                <a href="#" class="social-item"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link social-item"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="footer-copy">
+                &copy; 2024 CARTOON CRAFT. NOT AN OFFICIAL MINECRAFT PRODUCT.
             </div>
         </div>
     </footer>
-
-
 
     <script src="main.js"></script>
 </body>

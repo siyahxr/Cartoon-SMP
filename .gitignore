@@ -1,0 +1,5 @@
+.wrangler/
+status.txt
+test_output.txt
+gitignore_exists.txt
+temp_*.txt
